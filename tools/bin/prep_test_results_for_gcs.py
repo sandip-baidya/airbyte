@@ -30,7 +30,7 @@ def main():
     
     check_run_id = int(d["check_url"].split("/")[-1])
 
-    for elem in d['cases']:
+    for elem in d.get('cases', []):
         for conclusion in ('success', 'failure', 'skipped'):
             if conclusion not in elem['states']: 
                 continue
